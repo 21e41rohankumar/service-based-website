@@ -66,8 +66,8 @@ PrintEase/
 ## 📸 Screenshots
 
 | Homepage (Hero + Features) | Services Section | Google Map Integration |
-| :-------------------------: | :--------------: | :--------------------: |
-| ![Home](screenshot_home.png) | ![Services](screenshot_services.png) | ![Map](screenshot_map.png) |
+| :-------------------------: | :--------------: | :--------------------: 
+
 
 _(You can capture screenshots and place them in your repo if you want.)_
 
