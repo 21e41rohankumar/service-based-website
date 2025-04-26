@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PrintEase - Affordable Quality Printing</title>
+
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ffffff;
+      padding: 20px 40px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    nav .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #4f46e5; /* Indigo-600 */
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      color: #374151; /* Gray-700 */
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #6366f1; /* Indigo-500 */
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(to right, #6366f1, #4338ca);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: #e0e7ff;
+    }
+
+    .btn-primary {
+      background-color: #f59e0b; /* Amber-400 */
+      color: black;
+      padding: 12px 24px;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #fbbf24; /* Amber-500 */
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+    }
+
+    .section-center {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-center h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .section-center p {
+      color: #6b7280;
+      font-size: 18px;
+      margin-bottom: 50px;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s;
+      text-align: center;
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 15px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .card h3, .card h4 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .card p {
+      font-size: 16px;
+      color: #6b7280;
+    }
+
+    /* Services Section Different Background */
+    .services {
+      background-color: #f3f4f6;
+    }
+
+    /* Google Maps Section */
+    .map-container {
+      width: 100%;
+      height: 300px;
+      margin-top: 40px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #ffffff;
+      border-top: 1px solid #e5e7eb;
+      margin-top: 60px;
+    }
+
+    footer p {
+      font-size: 14px;
+      color: #6b7280;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">PrintEase</div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="order.html">Order</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="status.html">Status</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Affordable, Fast & Quality Printing</h1>
+    <p>Upload your file and pick it up easily from your nearest center.</p>
+    <a href="order.html" class="btn-primary">Upload Your File</a>
+  </section>
+
+  <!-- Features Section -->
+  <section>
+    <div class="section-center">
+      <h2>Why Choose PrintEase?</h2>
+      <p>We bring you the best printing service at unbeatable prices!</p>
+
+      <div class="cards">
+        <div class="card">
+          <img src="https://thumbs.dreamstime.com/b/lowest-price-guarantee-rubber-stamp-text-inside-illustration-82297376.jpg" alt="Affordable Printing">
+          <h3>Affordable</h3>
+          <p>Lowest prices guaranteed without compromising quality.</p>
+        </div>
+        <div class="card">
+          <img src="https://th.bing.com/th/id/R.c6aec9d04e8af41ef21992bd2285bbe0?rik=IuCmNpb8RIjeNA&riu=http%3a%2f%2fwww.freshbakerydelivers.com%2fuploads%2f1%2f1%2f4%2f0%2f114030559%2fs414721059453562989_p186_i2_w284.png&ehk=w8Zv4ycc46WEkXIk9%2bI12rezyyCYfJZfCYkWqodT1%2bU%3d&risl=&pid=ImgRaw&r=0" alt="Easy Pickup">
+          <h3>Easy Pickup</h3>
+          <p>Choose a pickup center close to you and grab your prints easily.</p>
+        </div>
+        <div class="card">
+          <img src="https://w7.pngwing.com/pngs/339/625/png-transparent-logo-quality-quality-emblem-label-photography.png" alt="Quality Prints">
+          <h3>Quality Prints</h3>
+          <p>High-definition color and black & white prints for every need.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid Section -->
+  <section class="services">
+    <div class="section-center">
+      <h2>Our Services</h2>
+      <p>Explore everything we offer.</p>
+
+      <div class="cards">
+        <div class="card">
+          <img src="https://i.pinimg.com/originals/18/1c/95/181c9531d2e1b794f2670094a2f21937.jpg" alt="Document Printing">
+          <h4>Document Printing</h4>
+          <p>Print your documents in various sizes and formats.</p>
+        </div>
+        <div class="card">
+          <img src="https://th.bing.com/th/id/OIP.cGh6DjDyEin_iRxCCUMy_gHaHa?w=900&h=900&rs=1&pid=ImgDetMain" alt="Binding">
+          <h4>Binding</h4>
+          <p>Get your projects and assignments professionally bound.</p>
+        </div>
+        <div class="card">
+          <img src="https://www.images.photojaanic.com/in/2022/productpage/prints/photo-strips/photostrips1.png" alt="Photo Printing">
+          <h4>Photo Printing</h4>
+          <p>Print your memories in stunning quality.</p>
+        </div>
+        <div class="card">
+          <img src="https://th.bing.com/th/id/R.ff17c5824779dbced8e80fa505cfbe65?rik=EkH0UEQeoxyvWw&riu=http%3a%2f%2fwww.avanti-ltd.com%2fimages%2fproducts%2fantiva-document-laminators%2fantiva-document-laminators-range.jpg&ehk=3dQqWZ3mmMKyzXOvDQV4L0IFRDlzqSyfwiD0F4T1CTo%3d&risl=&pid=ImgRaw&r=0" alt="Laminating">
+          <h4>Laminating</h4>
+          <p>Protect important documents with lamination.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Floating Contact Button -->
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScMU6N4vRhAiBTEUU3_9RM1DnIfgnGqRtIFCrOrnjvuQpMbDA/viewform?usp=dialog" target="_blank" class="floating-contact">
+  <img src="https://thumbs.dreamstime.com/z/message-sent-icon-meticulously-designed-128919771.jpg" alt="Contact Us" />
+</a>
+
+<style>
+  .floating-contact {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4f46e5; /* Indigo */
+    border-radius: 50%;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+
+  .floating-contact img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .floating-contact:hover {
+    transform: scale(1.1);
+    background-color: #6366f1; /* Lighter Indigo */
+  }
+</style>
+
+
+  <!-- Google Maps Section -->
+<!-- Google Maps Section -->
+<section>
+  <div class="section-center">
+    <h2>Find a Printer Location</h2>
+    <p>Locate the nearest printer center on the map below.</p>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.5630789945737!2d77.594562!3d12.9715987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3f1b74f06261%3A0x5e0cfa9b0b59f3c5!2sBangalore%2C%20Karnataka%2C%20India!5e0!3m2!1sen!2sin!4v1672345566006!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 rohankumar. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

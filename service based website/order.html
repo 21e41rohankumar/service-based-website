@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Place Your Order - PrintEase</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Modal Styles (Keep these for functionality) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10; /* Increased z-index to ensure it's on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-button {
+            background-color: #4C51BF;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .modal-button:hover {
+            background-color: #434190;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <nav class="bg-white shadow-md py-4">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <a href="index.html" class="text-2xl font-bold text-indigo-600">PrintEase</a>
+            <div class="space-x-6">
+                <a href="index.html" class="hover:text-indigo-600">Home</a>
+                <a href="order.html" class="hover:text-indigo-600 font-semibold">Order</a>
+                <a href="pricing.html" class="hover:text-indigo-600">Pricing</a>
+                <a href="status.html" class="hover:text-indigo-600">Status</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto mt-6 px-6">
+        <a href="index.html" class="inline-flex items-center text-white bg-indigo-600 hover:bg-indigo-700 py-2 px-4 rounded-full text-sm transition-colors">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            Back
+        </a>
+    </div>
+
+    <section class="py-12 px-6 md:py-16 container mx-auto">
+        <div class="bg-white rounded-xl shadow-lg p-8 md:p-12">
+            <h1 class="text-3xl font-bold text-center text-indigo-700 mb-8">Place Your Order</h1>
+
+            <form id="orderForm" class="space-y-6">
+                <div>
+                    <label for="fileInput" class="block text-gray-700 text-sm font-bold mb-2">Upload File</label>
+                    <input type="file" id="fileInput" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <p class="text-gray-500 text-xs italic">Please upload your document (PDF, DOCX, etc.)</p>
+                </div>
+
+                <div>
+                    <label for="paperSize" class="block text-gray-700 text-sm font-bold mb-2">Paper Size</label>
+                    <select id="paperSize" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <option value="">Select Paper Size</option>
+                        <option value="A4">A4 (Default)</option>
+                        <option value="A3">A3</option>
+                        <option value="Letter">Letter</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="printType" class="block text-gray-700 text-sm font-bold mb-2">Print Type</label>
+                    <select id="printType" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <option value="">Select Print Type</option>
+                        <option value="Black & White">Black & White</option>
+                        <option value="Color">Color</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="bindingType" class="block text-gray-700 text-sm font-bold mb-2">Binding Type</label>
+                    <select id="bindingType" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <option value="">Select Binding Type</option>
+                        <option value="None">None</option>
+                        <option value="Spiral">Spiral</option>
+                        <option value="Hardcover">Hardcover</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="pickupPoint" class="block text-gray-700 text-sm font-bold mb-2">Pickup Point</label>
+                    <select id="pickupPoint" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <option value="">Select Pickup Point</option>
+                        <option value="Center A">Center A - Main Street</option>
+                        <option value="Center B">Center B - City Mall</option>
+                        <option value="Center C">Center C - University Road</option>
+                    </select>
+                </div>
+
+                <div class="bg-gray-100 rounded-md p-4">
+                    <p class="text-gray-700"><span class="font-semibold">Estimated Price:</span> ₹<span id="price">20</span></p>
+                    <p class="text-gray-700 text-sm italic">Price will update based on your selections.</p>
+                </div>
+
+                <div class="text-center">
+                    <button type="button" onclick="validateAndConfirm()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition-colors focus:outline-none focus:shadow-outline">
+                        Place Order
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <h2 id="modalTitle" class="text-xl font-semibold mb-4"></h2>
+            <p id="modalMessage" class="mb-6"></p>
+            <button onclick="handleModalButtonClick()" class="modal-button">Okay</button>
+        </div>
+    </div>
+
+    <script>
+        function calculatePrice() {
+            let price = 20; // Base price
+            const paperSize = document.getElementById('paperSize').value;
+            const printType = document.getElementById('printType').value;
+            const bindingType = document.getElementById('bindingType').value;
+
+            if (paperSize === 'A3') price += 15;
+            if (printType === 'Color') price += 25;
+            if (bindingType === 'Spiral') price += 10;
+            if (bindingType === 'Hardcover') price += 20;
+
+            document.getElementById('price').textContent = price.toFixed(2);
+            return price;
+        }
+
+        // Update price on every change
+        document.getElementById('paperSize').addEventListener('change', calculatePrice);
+        document.getElementById('printType').addEventListener('change', calculatePrice);
+        document.getElementById('bindingType').addEventListener('change', calculatePrice);
+
+        function validateAndConfirm() {
+            const fileInput = document.getElementById('fileInput').files[0];
+            const paperSize = document.getElementById('paperSize').value;
+            const printType = document.getElementById('printType').value;
+            const bindingType = document.getElementById('bindingType').value;
+            const pickupPoint = document.getElementById('pickupPoint').value;
+
+            if (!fileInput || !paperSize || !printType || !bindingType || !pickupPoint) {
+                showModal('Please Select Items', 'Please ensure you have uploaded a file and selected all the required options.');
+                return;
+            }
+
+            const totalPrice = calculatePrice();
+            const modal = document.getElementById('orderModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalMessage = document.getElementById('modalMessage');
+
+            modalTitle.textContent = 'Order Confirmation';
+            modalMessage.textContent = `Your order has been placed successfully!\nTotal Price: ₹${totalPrice.toFixed(2)}\nPickup Point: ${pickupPoint}`;
+            modal.style.display = 'flex';
+            // Update the modal button's onclick function
+            document.querySelector('#orderModal .modal-button').onclick = redirectToHome;
+        }
+
+        function showModal(title, message) {
+            const modal = document.getElementById('orderModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalMessage = document.getElementById('modalMessage');
+            modalTitle.textContent = title;
+            modalMessage.textContent = message;
+            modal.style.display = 'flex';
+            // Update the modal button's onclick function for error messages
+            document.querySelector('#orderModal .modal-button').onclick = closeModal;
+        }
+
+        function closeModal() {
+            document.getElementById('orderModal').style.display = 'none';
+        }
+
+        function redirectToHome() {
+            window.location.href = "index.html";
+        }
+
+        // Initially calculate price (base price)
+        calculatePrice();
+    </script>
+
+</body>
+</html>

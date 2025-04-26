@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Order Status - PrintEase</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Custom styles for header, buttons, etc. */
+    .navbar {
+      background-color: #4f46e5; /* Indigo-600 */
+    }
+    .navbar a {
+      color: #fff;
+    }
+    .navbar a:hover {
+      color: #fbbf24; /* Amber-500 */
+    }
+    .btn-primary {
+      background-color: #6366f1; /* Indigo-500 */
+      color: white;
+      font-weight: bold;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .btn-primary:hover {
+      background-color: #4f46e5; /* Indigo-600 */
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ffffff;
+    }
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<!-- Navbar -->
+<nav class="navbar shadow-md">
+  <div class="navbar-container">
+    <div class="nav-links">
+      <a href="index.html" class="hover:text-amber-500">Home</a>
+      <a href="order.html" class="hover:text-amber-500">Order</a>
+      <a href="pricing.html" class="hover:text-amber-500">Pricing</a>
+      <a href="status.html" class="hover:text-amber-500 font-bold">Status</a>
+    </div>
+    <div class="logo">
+      PrintEase
+    </div>
+  </div>
+</nav>
+
+<!-- Status -->
+<section class="py-16 px-6 max-w-4xl mx-auto text-center">
+  <h1 class="text-4xl font-bold text-indigo-600 mb-10">Track Your Order</h1>
+
+  <div class="bg-white p-10 rounded-xl shadow-lg">
+    <input type="text" id="orderID" placeholder="Enter your Order ID" class="border p-3 w-full rounded-lg mb-6">
+
+    <button onclick="trackOrder()" class="btn-primary">
+      Check Status
+    </button>
+
+    <div id="orderStatus" class="mt-8 text-2xl font-semibold text-green-600"></div>
+  </div>
+</section>
+
+<script>
+function trackOrder() {
+  const orderInput = document.getElementById('orderID').value;
+  const statusDisplay = document.getElementById('orderStatus');
+
+  if(orderInput.trim() !== '') {
+    statusDisplay.innerText = "Order #" + orderInput + " is currently being processed. 🎉";
+    statusDisplay.classList.remove('text-red-600');
+    statusDisplay.classList.add('text-green-600');
+  } else {
+    statusDisplay.innerText = "Please enter a valid Order ID.";
+    statusDisplay.classList.remove('text-green-600');
+    statusDisplay.classList.add('text-red-600');
+  }
+}
+</script>
+
+</body>
+</html>
